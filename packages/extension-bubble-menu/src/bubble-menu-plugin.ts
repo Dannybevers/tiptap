@@ -122,6 +122,12 @@ export class BubbleMenuView {
     if (event?.relatedTarget && this.element.parentNode?.contains(event.relatedTarget as Node)) {
       return
     }
+    
+    if (
+       event?.relatedTarget === this.editor.view.dom
+     ) {
+       return
+     }
 
     this.hide()
   }
